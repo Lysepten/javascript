@@ -126,3 +126,19 @@ let n1 = !false;
 let n2 = !true;
 let n3 = !111;
 console.log(n3);
+
+/*
+
+삼항 연산자
+- 조건식 ? 값1 : 값2
+- 조건식이 true이면 값1을 반환하고, false이면 값2를 반환한다.
+
+*/
+
+let number = 10;
+let result2 = number % 2 == 1 ? "홀수입니다." : "짝수입니다."
+console.log(result2);
+
+let number2 = 4;
+let res = number % 2 == 1 ? "홀수임" : "짝수임"
+console.log(res)
