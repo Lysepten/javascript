@@ -8,16 +8,35 @@
 </head>
 <body>
     <h3>구구단</h3>
-    <input type="button" value="버튼">
+    <input id="btn1" type="button" value="버튼">
 </body>
 </html>
 
-<!-- 버튼으로 몇 단인지 입력받기 -->
+<!-- 버튼에 클릭 이벤트 부여하여 구구단 함수 호출-->
+<!-- 조건문을 사용하여  prompt로 2~9 입력 -->
 <!-- document.write() 사용하기 -->
 <!-- html 파일에 스크립트까지 작성하기 defer 방지 -->
 <!-- 초기화 버튼 만들기 버튼 안에(새로고침) onClick="window.location.reload() --- input.setAttribute("placeholder", "입력해주세요."); 참고 -->
 <!-- 클릭 이벤트 이용 -->
 
 <script>
-    document.write
-</script>
+    let btn1 = document.getElementById('btn1');
+btn1.onclick = function () {
+    let score = prompt("몇단인가요?");
+    if (score < 2 || score > 9) {
+        alert("2~9만 입력해주세요.");
+        return;
+    } else {
+        for(let i = 1; i <= 9; i++) {
+            document.write(score + " * " + i + " = " + score * i + "</br>");
+        }
+        let btn2 = document.createElement('button');
+        let btn2text = document.createTextNode('초기화');
+        btn2.setAttribute("onClick", "window.location.reload()");
+        btn2.appendChild(btn2text);
+        document.querySelector("body").appendChild(btn2);
+    }
+}
+
+</script> 
+
